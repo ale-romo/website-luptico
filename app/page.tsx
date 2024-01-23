@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Slider from "@/components/Slider";
+import Location from "@/components/Location";
 
 const navItems = [
   {
@@ -48,14 +49,42 @@ const estancias = {
   ],
 }
 
+const venues = [
+  {
+    img: '/images/venues/vinedo-img.webp',
+    company: 'Nombre Viñedo',
+    distance: '2.1km',
+    rating: '4',
+  },
+  {
+    img: '/images/venues/vinedo-img.webp',
+    company: 'Nombre Viñedo',
+    distance: '2.1km',
+    rating: '4',
+  },
+  {
+    img: '/images/venues/vinedo-img.webp',
+    company: 'Nombre Viñedo',
+    distance: '2.1km',
+    rating: '4',
+  },
+  {
+    img: '/images/venues/vinedo-img.webp',
+    company: 'Nombre Viñedo',
+    distance: '2.1km',
+    rating: '4',
+  }
+]
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <Navbar navItems={navItems} />
-      <section className="mt-32 w-full max-w-screen-xl">
+      <section className="mt-32 w-full max-w-screen-xl mb-[600px]">
         <Slider {...estancias} />
       </section>
+      <Location venues={venues}/>
     </main>
   );
 }

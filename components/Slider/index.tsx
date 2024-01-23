@@ -51,11 +51,13 @@ const Slider = ({ slides, title, cta }: Props) => {
               <Cta {...cta} />
             </div>
           </div>
-          <div className="w-1/2 py-10 pl-20 flex flex-col justify-center gap-10">
-            <h2 className="font-display text-6xl text-orange-500">{title}</h2>
-            <p className="text-xl">{description}</p>
-            <ArrowBtn direction="left" cb={() => fadeSlide(-1)} />
-            <ArrowBtn direction="right" cb={() => fadeSlide(1)} />
+          <div className="w-1/2 py-10 flex flex-col justify-center gap-10 relative">
+            <h2 className="font-display text-7xl text-right text-orange-500 pl-20">{title}</h2>
+            <p className="text-xl px-20">{description}</p>
+            <div className="flex absolute w-full top-1/2 -translate-y-1/2 justify-between">
+              <ArrowBtn direction="left" cb={() => fadeSlide(-1)} />
+              <ArrowBtn direction="right" cb={() => fadeSlide(1)} />
+            </div>
           </div>
         </div>
       ))}

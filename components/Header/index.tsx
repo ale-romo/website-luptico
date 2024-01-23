@@ -3,7 +3,7 @@ import Image from "next/image";
 const Header = () => {
   return <section className="w-full flex flex-col justify-center max-w-scree-xl p-8 lg:p-20 pb-0">
     <div className="relative flex flex-col justify-center mb-2">
-      <Image src="/images/header-bg.webp" width="1110" height="420" className="w-full h-auto" alt="Lúptico" />
+      <Image src="/images/header-bg.webp" priority width="1110" height="420" className="w-full h-auto" alt="Lúptico" />
       <div className="bg-white rounded-t-full p-10 pb-0 w-56 absolute left-1/2  -translate-x-1/2 bottom-0">
         <Image src="/images/logo.svg" width="348" height="206" className="w-full h-auto" alt="Lúptico" />
       </div>
