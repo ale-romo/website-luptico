@@ -14,8 +14,8 @@ const Location = ({ venues }: Props) => {
 			<div style={{ backgroundImage: "url(/images/location-bg.webp)"}} className="bg-bottom bg-contain bg-no-repeat">
 				<Image src="/images/location-clip.svg" width="1195" height="46" className="w-full h-auto -mb-12" alt="" />
 				<div className="flex max-w-screen-xl">
-					<div className="w-1/2">
-						<MapComponent isMarkerShown />
+					<div className="w-1/2" style={{ height: "50vh" }}>
+						<MapComponent />
 					</div>
 					<div className="w-1/2 py-20 px-10 text-white">
 						<Carousel>

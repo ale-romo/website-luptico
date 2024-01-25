@@ -11,13 +11,13 @@ export interface Props {
 }
 
 const VenueCard = ({ img, description, company, distance, rating }: Props) => (
-  <div>
-    <div className="overflow-hidden rounded-full mb-5">
-      <Image src={img} width="250" height="150" className="w-full h-auto" alt="" />
+  <div className="flex flex-col items-center">
+    <div className="flex w-48 h-48 relative mb-10">
+      <Image src={img} fill alt="" className="rounded-full shadow-2xl" />
     </div>
     <h2>{company}</h2>
     {description && <p className="text-xl text-center">{description}</p>}
-    <hr className="my-2" />
+    <hr className="my-2 w-32" />
     <div className="flex justify-between">
       <StarRating rating={rating} />
       <div>

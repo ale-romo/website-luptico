@@ -54,25 +54,25 @@ const venues = [
     img: '/images/venues/vinedo-img.webp',
     company: 'Nombre Viñedo',
     distance: '2.1km',
-    rating: '4',
+    rating: 3.5,
   },
   {
     img: '/images/venues/vinedo-img.webp',
     company: 'Nombre Viñedo',
     distance: '2.1km',
-    rating: '4',
+    rating: 3.4,
   },
   {
     img: '/images/venues/vinedo-img.webp',
     company: 'Nombre Viñedo',
     distance: '2.1km',
-    rating: '4',
+    rating: 3.3,
   },
   {
     img: '/images/venues/vinedo-img.webp',
     company: 'Nombre Viñedo',
     distance: '2.1km',
-    rating: '4',
+    rating: 3.5,
   }
 ]
 
