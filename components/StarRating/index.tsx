@@ -2,7 +2,7 @@ interface Props {
   rating: number;
 }
 
-const StarRating = ({ rating }: Props) => {
+const StarRating = ({ rating = 0 }: Props) => {
   const maxRating = 5;
   const ratingFloor = Math.floor(rating)
   const decimal = (rating - ratingFloor) * 70 + 15;

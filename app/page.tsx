@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Slider from "@/components/Slider";
 import Location from "@/components/Location";
+import places from '@/public/places.json';
 
 const navItems = [
   {
@@ -74,32 +75,7 @@ const jardin = {
   ],
 }
 
-const venues = [
-  {
-    img: '/images/venues/vinedo-img.webp',
-    company: 'Nombre Viñedo',
-    distance: '2.1',
-    rating: 3.5,
-  },
-  {
-    img: '/images/venues/vinedo-img.webp',
-    company: 'Nombre Viñedo',
-    distance: '2.1',
-    rating: 3.4,
-  },
-  {
-    img: '/images/venues/vinedo-img.webp',
-    company: 'Nombre Viñedo',
-    distance: '2.1',
-    rating: 3.3,
-  },
-  {
-    img: '/images/venues/vinedo-img.webp',
-    company: 'Nombre Viñedo',
-    distance: '2.1',
-    rating: 3.5,
-  }
-]
+
 
 export default function Home() {
   return (
@@ -112,7 +88,7 @@ export default function Home() {
         <Slider {...estancias} />
         <Slider {...jardin} reverse />
       </section>
-      <Location venues={venues}/>
+      <Location venues={places}/>
     </main>
   );
 }
