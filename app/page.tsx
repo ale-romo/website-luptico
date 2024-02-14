@@ -105,7 +105,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-      <div className="mb-20 w-full">
+      <div className="mb-20 w-full sticky top-0 z-40">
         <Navbar navItems={navItems} />
       </div>
       <section className="mb-32 md:mb-44 w-full max-w-screen-xl  px-3 md:px-8 lg:px-20 flex flex-col gap-20">
