@@ -54,7 +54,7 @@ const Slider = ({ slides, title, cta, reverse = false }: Props) => {
                 className={`rounded-3xl rounded-tr-none overflow-hidden z-10 relative transition-all duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}
               />
             </div>
-            <div className="absolute right-0 bottom-0 translate-y-1/3 translate-x-1/3 z-10">
+            <div className={`absolute ${reverse ? 'left-0 -translate-x-1/3' : 'right-0 translate-x-1/3'} bottom-0 translate-y-1/3  z-10`}>
               <Cta {...cta} />
             </div>
           </div>

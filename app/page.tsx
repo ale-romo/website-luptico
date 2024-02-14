@@ -55,8 +55,8 @@ const jardin = {
     title: "Reserva ahora",
     href: "https://airbnb.com",
     icon: "/images/ab-logo-white.svg",
-    bg1: "bg-orange-400",
-    bg2: "bg-orange-500 hover:bg-orange-400/90",
+    bg1: "bg-orange-500",
+    bg2: "bg-orange-600 hover:bg-orange-400/10",
   },
   slides: [
     {
