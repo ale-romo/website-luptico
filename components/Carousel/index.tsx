@@ -3,12 +3,23 @@ import ArrowBtn from "@/components/ArrowBtn";
 
 interface Props {
   children: ReactNode[];
+  selectedPlace: number;
 }
 
-const Carousel = ({ children }: Props) => {
+const Carousel = ({ children, selectedPlace }: Props) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
   const [isRightArrowVisible, setIsRightArrowVisible] = useState(true);
+
+  useEffect(() => {
+		const scrollSnapSection = document.getElementById('scrollSnap');
+    const element = document.getElementById(`item-${selectedPlace}`);
+    scrollSnapSection?.classList.remove('snap-mandatory', 'snap-x');
+    element?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    setTimeout(() => {
+      scrollSnapSection?.classList.add('snap-mandatory', 'snap-x');
+    }, 1000);
+	}, [selectedPlace]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,11 +59,11 @@ const Carousel = ({ children }: Props) => {
 
   return (
     <div className="relative">
-      <div className="w-full overflow-scroll snap-x snap-mandatory" ref={carouselRef}>
+      <div id="scrollSnap" className="w-full overflow-scroll snap-x snap-mandatory" ref={carouselRef}>
         <div className="flex gap-6">
           {children &&
             children.map((child, i) => (
-              <div key={i} className="flex-shrink-0 w-full snap-start">
+              <div key={i} id={`item-${i}`} className="flex-shrink-0 w-full snap-start">
                 {child}
               </div>
             ))}

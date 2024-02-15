@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction, useEffect } from "react";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 interface Place {
@@ -14,6 +14,8 @@ interface Place {
 
 interface Props {
   places: Place[];
+  selectedPlace: number;
+  setSelectedPlace: Dispatch<SetStateAction<number>>;
 }
 
 function slugify(str: string) {
@@ -32,7 +34,7 @@ export const center = {
   lng: -116.6306949,
 };
 
-const Map = ({ places }: Props) => {
+const Map = ({ places, selectedPlace, setSelectedPlace }: Props) => {
   const [map, setMap] = useState<google.maps.Map>();
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
@@ -44,10 +46,6 @@ const Map = ({ places }: Props) => {
     zIndex: "20",
   };
 
-  const markerClickHandler = () => console.log('clicked');
-
-  const getPlaceID = (place: Place, i: number) =>
-  `${slugify(place.name)}-${i}`;
 
   const getMarkerIcon = (type: string, active: boolean) => {
     switch (type) {
@@ -62,6 +60,16 @@ const Map = ({ places }: Props) => {
     }
   }
 
+  useEffect(() => {
+    if (map) {
+      map.setZoom(14);
+      map.panTo({
+        lat: places[selectedPlace].lat,
+        lng: places[selectedPlace].lng
+      });
+    }
+  }, [selectedPlace, map, places]);
+
 
   return isLoaded ?
     <GoogleMap
@@ -72,14 +80,14 @@ const Map = ({ places }: Props) => {
     >
       {places.map((place, index) => {
         return <MarkerF
-          key={`${getPlaceID(place, index)}-markerF`}
-          onClick={() => markerClickHandler()}
+          key={`${index}-markerF`}
+          onClick={() => setSelectedPlace(index)}
           position={{
             lat: place.lat,
             lng: place.lng,
           }}
           options={{
-            icon: getMarkerIcon(place.type, false),
+            icon: getMarkerIcon(place.type, selectedPlace === index),
           }}
         />
       })}
