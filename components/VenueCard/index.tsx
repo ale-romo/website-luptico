@@ -15,12 +15,11 @@ export interface Props {
   desc: string;
   rating?: number;
   img: string;
-  selectedPlace: number;
-  setSelectedPlace: Dispatch<SetStateAction<number>>;
-  id: number;
+  setSelectedPlace?: Dispatch<SetStateAction<number>>;
+  id?: number;
 }
 
-const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, selectedPlace, setSelectedPlace, id }: Props) => {
+const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSelectedPlace, id }: Props) => {
   const centerArray: [number, number] = [center.lat, center.lng];
   const getImage = (img: string) => img === 'luptico.webp' ? '/images/location-bg.webp' : `https://www.larutadelvinoensenada.com/ruta-vino-valle-guadalupe/${img}`;
 
