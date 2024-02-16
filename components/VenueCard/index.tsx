@@ -4,8 +4,7 @@ import StarRating from "@/components/StarRating";
 import { center } from "../MapComponent";
 import getDistance from "@/utils/calculateDistance";
 
-
-export interface Props {
+export interface Venue {
   lat: number;
   type: string;
   lng: number;
@@ -15,11 +14,14 @@ export interface Props {
   desc: string;
   rating?: number;
   img: string;
-  setSelectedPlace?: Dispatch<SetStateAction<number>>;
+}
+
+export interface Props extends Venue {
+  setSelectedPlace: Dispatch<SetStateAction<number>>;
   id?: number;
 }
 
-const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSelectedPlace, id }: Props) => {
+const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSelectedPlace, id= 0 }: Props) => {
   const centerArray: [number, number] = [center.lat, center.lng];
   const getImage = (img: string) => img === 'luptico.webp' ? '/images/location-bg.webp' : `https://www.larutadelvinoensenada.com/ruta-vino-valle-guadalupe/${img}`;
 

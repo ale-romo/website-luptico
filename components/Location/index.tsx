@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
-import VenueCard, { Props as Venue } from "../VenueCard";
+import VenueCard, { Venue } from "../VenueCard";
 import MapComponent from "../MapComponent";
 import { useState } from "react";
 
@@ -25,7 +25,7 @@ const Location = ({ venues }: Props) => {
 							<div className="w-full md:w-1/2 py-5 px-10 text-white">
 								<Carousel selectedPlace={selectedPlace}>
 									{venues.map((venue, i)=> (
-										<VenueCard key={i} {...venue} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace} id={i} />
+										<VenueCard key={i} {...venue} setSelectedPlace={setSelectedPlace} id={i} />
 									))}
 								</Carousel>
 							</div>
