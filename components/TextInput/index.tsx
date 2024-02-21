@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const TextInput = ({ type = 'text', id, placeholder, required = false}: Props) => {
-  return  <input className="flex py-2 px-4 w-full" type={type} id={id} name={id} placeholder={placeholder} required={required} />
+  return  <input className="flex py-2 px-4 w-full bg-white/70" type={type} id={id} name={id} placeholder={placeholder} required={required} />
 }
 
 export default TextInput;

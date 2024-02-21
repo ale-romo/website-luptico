@@ -58,7 +58,7 @@ const Slider = ({ slides, title, cta, reverse = false }: Props) => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 flex flex-col justify-center gap-10 relative">
-            <p className={`text-base md:text-lg xl:text-xl px-16 text-center ${reverse ? 'text-right' : 'lg:text-left'}  lg:pt-20 transition-all duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{slides[currentSlide].description}</p>
+            <p className={`text-base md:text-lg xl:text-xl px-16 text-center ${reverse ? 'lg:text-right' : 'lg:text-left'}  lg:pt-20 transition-all duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{slides[currentSlide].description}</p>
             <div className="flex absolute w-full top-1/2 -translate-y-1/2 justify-between">
               <ArrowBtn direction="left" cb={() => fadeSlide(-1)} />
               <ArrowBtn direction="right" cb={() => fadeSlide(1)} />

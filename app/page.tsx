@@ -1,7 +1,8 @@
-import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Slider from "@/components/Slider";
 import Location from "@/components/Location";
+import Contact from "@/components/Contact";
 import places from '@/public/places.json';
 
 const navItems = [
@@ -55,7 +56,6 @@ const jardin = {
   cta: {
     title: "Reserva ahora",
     href: "https://airbnb.com",
-    icon: "/images/ab-logo-white.svg",
     bg1: "bg-orange-500",
     bg2: "bg-orange-600 hover:bg-orange-400/10",
   },
@@ -80,7 +80,7 @@ const jardin = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header />
+      <Hero />
       <div className="mb-20 w-full sticky top-0 z-40">
         <Navbar navItems={navItems} />
       </div>
@@ -88,7 +88,12 @@ export default function Home() {
         <Slider {...estancias} />
         <Slider {...jardin} reverse />
       </section>
-      <Location venues={places}/>
+      <section className="pb-20">
+        <Location venues={places}/>
+      </section>
+      <section>
+        <Contact />
+      </section>
     </main>
   );
 }

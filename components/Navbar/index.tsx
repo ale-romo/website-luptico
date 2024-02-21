@@ -14,10 +14,10 @@ interface Props {
 
 const Navbar = ({ navItems }: Props) => {
 
-  return <div className="w-full flex p-2 justify-between items-center bg-no-repeat bg-contain px-3 sm:px-8 lg:px-20 pt-5 bg-gradient-to-b from-white to-transparent from-50%">
+  return <div className="w-full flex py-1 md:py-2 justify-between items-center bg-no-repeat bg-contain px-3 sm:px-8 lg:px-20  bg-gradient-to-b from-white to-transparent from-50%">
     <Image src="/images/navbar-bg.svg"width="1195" height="62" alt="" className="w-full h-full absolute top-0 left-0" />
-    <Link href="/" title="Lúptico" className=" sm:-mb-5 md:-mb-8 z-10">
-        <Image src="/images/logo-small.svg" alt="Lúptico" height="66" width="86" className="h-auto w-16" />
+    <Link href="/" title="Lúptico" className="sm:-mb-5 md:-mb-8 z-10">
+        <Image src="/images/logo-small.svg" alt="Lúptico" height="66" width="86" className="h-auto w-12 md:w-16" />
     </Link>
     <nav className={`w-full z-10 relative flex justify-end gap-6`}>
         {navItems.map(({ href, title, icon }) => (

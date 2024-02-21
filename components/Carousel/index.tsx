@@ -15,18 +15,20 @@ const Carousel = ({ children, selectedPlace }: Props) => {
 		const scrollSnapSection = document.getElementById('scrollSnap');
     const element = document.getElementById(`item-${selectedPlace}`);
     scrollSnapSection?.classList.remove('snap-mandatory', 'snap-x');
-    element?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    element?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
     setTimeout(() => {
       scrollSnapSection?.classList.add('snap-mandatory', 'snap-x');
     }, 1000);
 	}, [selectedPlace]);
 
   useEffect(() => {
+    const carouselNode = carouselRef.current;
+
     const handleScroll = () => {
-      if (carouselRef.current) {
-        const scrollLeft = carouselRef.current.scrollLeft;
-        const scrollWidth = carouselRef.current.scrollWidth;
-        const clientWidth = carouselRef.current.clientWidth;
+      if (carouselNode) {
+        const scrollLeft = carouselNode.scrollLeft;
+        const scrollWidth = carouselNode.scrollWidth;
+        const clientWidth = carouselNode.clientWidth;
 
         const isLeftVisible = scrollLeft > 0;
         const isRightVisible = scrollLeft + clientWidth < scrollWidth;
@@ -36,13 +38,13 @@ const Carousel = ({ children, selectedPlace }: Props) => {
       }
     };
 
-    if (carouselRef.current) {
-      carouselRef.current.addEventListener("scroll", handleScroll);
+    if (carouselNode) {
+      carouselNode.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener("scroll", handleScroll);
+      if (carouselNode) {
+        carouselNode.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);

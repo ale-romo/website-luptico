@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display, Sacramento } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const headingFont = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-heading',
+});
+const contentFont = Sacramento({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoh2dUiaYaeiJTvVfowO4bDHzLSffPGyw"></script> */}
+      <body className={`${headingFont.variable} ${contentFont.variable}`}>{children}</body>
     </html>
   );
 }
