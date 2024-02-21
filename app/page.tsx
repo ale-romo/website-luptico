@@ -88,9 +88,7 @@ export default function Home() {
         <Slider {...estancias} />
         <Slider {...jardin} reverse />
       </section>
-      <section className="pb-20">
         <Location venues={places}/>
-      </section>
       <section>
         <Contact />
       </section>
