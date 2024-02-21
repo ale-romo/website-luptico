@@ -29,13 +29,13 @@ const Location = ({ venues }: Props) => {
   return (<section className="flex flex-col items-end w-full pb-20">
 		 	<h2 className={`px-3 md:px-8 lg:px-20 font-display text-5xl md:text-6xl text-center md:text-right md:indent-40 text-orange-500 mb-14 md:mb-0`}>En el corazón del<br className="hidden lg:flex" />Valle de Guadalupe</h2>
 			<div className="w-full relative flex flex-col items-center">
-				<div className="w-11/12 md:w-5/12 rounded-3xl overflow-hidden h-96 relative md:absolute md:left-10 md:top-0 md:h-full">
+				<div className="w-11/12 md:w-5/12 rounded-3xl overflow-hidden h-96 relative md:absolute md:left-1/2 md:-translate-x-full max-w-screen-sm md:top-0 md:h-full z-10">
 					<MapComponent places={venues} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}/>
 				</div>
 				<div className="bg-gradient-to-t from-teal-100 to-purple-200 w-full -mt-20 md:my-10">
-					<div style={{ backgroundImage: "url(/images/location-bg.webp)"}} className="bg-bottom  bg-contain bg-no-repeat flex flex-col">
+					<div style={{ backgroundImage: "url(/images/location-bg.webp)"}} className="bg-bottom  bg-contain bg-no-repeat flex flex-col items-center">
 						<Image src="/images/location-clip.svg" width="1195" height="46" className="w-full h-auto" alt="" />
-						<div className="flex max-w-screen-xl justify-end">
+						<div className="flex max-w-screen-xl justify-end w-full">
 							<div className="w-full md:w-1/2 pt-16 pb-5 md:py-5 px-10 text-white">
 								<Carousel selectedPlace={selectedPlace}>
 									{venues.map((venue, i)=> (
@@ -44,7 +44,7 @@ const Location = ({ venues }: Props) => {
 								</Carousel>
 							</div>
 						</div>
-						<Image src="/images/location-clip.svg" width="1195" height="46" className="w-full h-auto rotate-180" alt="" />
+						<Image src="/images/location-clip.svg" width="1195" height="46" className="w-full h-auto rotate-180 -mb-1" alt="" />
 					</div>
 				</div>
 			</div>
