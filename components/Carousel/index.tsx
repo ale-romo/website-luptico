@@ -65,7 +65,7 @@ const Carousel = ({ children, selectedPlace }: Props) => {
         <div className="flex gap-6">
           {children &&
             children.map((child, i) => (
-              <div key={i} id={`item-${i}`} className="flex-shrink-0 w-full snap-start">
+              <div key={`${i}-carousel`} id={`item-${i}`} className="flex-shrink-0 w-full snap-start">
                 {child}
               </div>
             ))}

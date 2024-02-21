@@ -36,7 +36,7 @@ const Accordion = ({ items }: Props) => {
     <>
       {items.map(({ title, content }, i) => {
         return (
-        <div key={i} className="border-b-blue-800 border-b-2 first:border-t-blue-800 first:border-t-2">
+        <div key={`${i}-accordion`} className="border-b-blue-800 border-b-2 first:border-t-blue-800 first:border-t-2">
           <button onClick={() => setIsOpen(isOpen !== i ? i : null)} className="w-full flex justify-between items-center">
             <h3>{title}</h3><ArrowBtn direction={isOpen === i ? 'up' : 'down'} />
           </button>

@@ -38,9 +38,20 @@ const Location = ({ venues }: Props) => {
 						<div className="flex max-w-screen-xl justify-end">
 							<div className="w-full md:w-1/2 pt-16 pb-5 md:py-5 px-10 text-white">
 								<Carousel selectedPlace={selectedPlace}>
-									{venues.map((venue, i)=> (
-										<VenueCard key={i} {...venue} setSelectedPlace={setSelectedPlace} id={i} />
-									))}
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									<div>bob  bob</div>
+									{/* {venues.map((venue, i)=> (
+										<VenueCard key={`${i}-venueCard`} {...venue} setSelectedPlace={setSelectedPlace} id={i} />
+									))} */}
 								</Carousel>
 							</div>
 						</div>
