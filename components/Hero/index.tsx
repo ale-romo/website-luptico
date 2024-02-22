@@ -9,10 +9,10 @@ const Hero = () => {
       </div>
     </div>
     <div className="relative">
-      <h4 className="flex absolute w-full top-0 right-0 pt-1 sm:pt-3 xl:pt-5 text-green-500 uppercase text-[4vw] sm:text-[3vw] lg:text-[2.7vw] justify-end">Cabañas rústicas y jardin <span className="hidden sm:flex">de eventos</span></h4>
+      <h4 className="flex absolute w-full top-0 right-0 pt-1 sm:pt-3 xl:pt-5 text-green-500 uppercase text-[4vw] sm:text-[3vw] lg:text-[2.7vw] xl:text-4xl justify-end">Cabañas rústicas y jardin <span className="hidden sm:flex">de eventos</span></h4>
       <Image src="/images/brand.svg" width="401" height="88" className="w-full h-auto" alt="Lúptico" />
-      <h4 className="flex pt-1 sm:pt-3 xl:pt-5 text-green-500 uppercase text-[4vw] sm:text-[3vw] lg:text-[2.7vw] text-left">En el <span className="hidden sm:flex">corazón del</span> Valle de Guadalupe</h4>
-      <p className="text-orange-500 absolute right-0  bottom-0 -rotate-12 text-[8vw] sm:text-[7vw] md:text-[6vw]  font-display">Pet Friendly</p>
+      <h4 className="flex pt-1 sm:pt-3 xl:pt-5 text-green-500 uppercase text-[4vw] sm:text-[3vw] lg:text-[2.7vw] xl:text-4xl text-left">En el <span className="hidden sm:flex">corazón del</span> Valle de Guadalupe</h4>
+      <p className="text-orange-500 absolute right-0  bottom-0 -rotate-12 text-[8vw] sm:text-[7vw] md:text-[6vw] xl:text-7xl  font-display">Pet Friendly</p>
     </div>
   </section>
 

@@ -62,7 +62,7 @@ const Map = ({ places, selectedPlace, setSelectedPlace }: Props) => {
 
   useEffect(() => {
     if (map) {
-      map.setZoom(14);
+      map.setZoom(13);
       map.panTo({
         lat: places[selectedPlace].lat,
         lng: places[selectedPlace].lng

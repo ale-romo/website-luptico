@@ -39,7 +39,7 @@ const Location = ({ venues }: Props) => {
 							<div className="w-full md:w-1/2 pt-16 pb-5 md:py-5 px-10 text-white">
 								<Carousel selectedPlace={selectedPlace}>
 									{venues.map((venue, i)=> (
-										<VenueCard key={`${i}-venueCard`} {...venue} setSelectedPlace={setSelectedPlace} id={i} />
+										<VenueCard key={`${i}-venueCard`} {...venue} setSelectedPlace={setSelectedPlace} id={i} selectedPlace={selectedPlace} />
 									))}
 								</Carousel>
 							</div>
