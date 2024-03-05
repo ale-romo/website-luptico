@@ -26,9 +26,7 @@ export interface Props extends Venue {
 }
 
 const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSelectedPlace, id = 0, distance, type, selectedPlace }: Props) => {
-  const centerArray: [number, number] = [center.lat, center.lng];
-
-  const socialMedia = [
+const socialMedia = [
     {
       href: `tel:${telephone}`,
       icon: '/images/phone-logo.svg'
@@ -48,7 +46,7 @@ const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSele
   const getPinIcon = (type:string, active: boolean) => `/images/pin${type === 'vinedo' ? 'Wine': ''}${type === 'restaurante' ? 'Food' : ''}${type === 'Luptico' ? 'Luptico': ''}${active ? 'Active' : ''}.svg`;
 
   return <div className="flex flex-col items-center">
-    <div className="flex w-56 h-56 relative">
+    <div className="flex size-40 mt-10 md:mt-0 md:size-56 relative">
       <Image src={getImage(img)} fill alt="" sizes="200px" className="rounded-full  shadow-2xl" />
     </div>
     <div className="p-4 pt-10 w-full -mt-5 sm:-ml-5 md:-mt-5 bg-purple-400/70 flex flex-col items-center gap-2">

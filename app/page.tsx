@@ -84,14 +84,17 @@ export default function Home() {
       <div className="mb-20 w-full sticky top-0 z-40">
         <Navbar navItems={navItems} />
       </div>
-      <section className="mb-32 md:mb-44 w-full max-w-screen-xl  px-3 md:px-8 lg:px-20 flex flex-col gap-20">
+      <section className="mb-32 md:mb-28 w-full max-w-screen-xl  px-3 md:px-8 lg:px-20 flex flex-col gap-28">
         <Slider {...estancias} />
         <Slider {...jardin} reverse />
       </section>
-        <Location venues={places}/>
+      <Location venues={places}/>
       <section>
         <Contact />
       </section>
+      <div className="w-full max-w-screen-xl px-3 md:px-10 pt-20">
+        <p className="w-full flex justify-center bg-no-repeat pt-10 pb-8" style={{ backgroundImage: 'url(/images/footer-bg.svg)' }}>© 2024 Luptico. All rights reserved <span className="px-10">|</span> A website by <a href="http://mintitmedia.com">Mint IT Media</a></p>
+      </div>
     </main>
   );
 }

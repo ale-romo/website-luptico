@@ -26,7 +26,7 @@ const Location = ({ venues }: Props) => {
 	const compareByDistance = (a: Venue, b: Venue) => a.distance! - b.distance!;
 	venues.sort(compareByDistance);
 
-  return (<section className="flex flex-col items-end w-full pb-20">
+  return (<section className="flex flex-col items-end w-full z-40 md:z-0">
 		 	<h2 className={`px-3 md:px-8 lg:px-20 font-display text-5xl md:text-6xl text-center md:text-right md:indent-40 text-orange-500 mb-14 md:mb-0`}>En el corazón del<br className="hidden lg:flex" />Valle de Guadalupe</h2>
 			<div className="w-full relative flex flex-col items-center">
 				<div className="w-11/12 md:w-5/12 rounded-3xl overflow-hidden h-96 relative md:absolute md:left-1/2 md:-translate-x-full max-w-screen-sm md:top-0 md:h-full z-10">

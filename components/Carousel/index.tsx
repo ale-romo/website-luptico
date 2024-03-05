@@ -55,6 +55,7 @@ const Carousel = ({ children, selectedPlace }: Props) => {
       const cardWidth = carouselRef.current.offsetWidth;
 
       const newScrollLeft = currentScrollLeft + direction * cardWidth;
+      console.log('something')
       carouselRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" });
     }
   };
