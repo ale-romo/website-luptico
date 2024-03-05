@@ -26,7 +26,9 @@ export interface Props extends Venue {
 }
 
 const VenueCard = ({ lat, lng, name, telephone, web,  desc, rating, img, setSelectedPlace, id = 0, distance, type, selectedPlace }: Props) => {
-const socialMedia = [
+  const centerArray: [number, number] = [center.lat, center.lng];
+
+  const socialMedia = [
     {
       href: `tel:${telephone}`,
       icon: '/images/phone-logo.svg'
